@@ -1,0 +1,235 @@
+.three-btn {
+  width: 100px; 
+  height: 40px; 
+  margin-right: 10px; /* Add space between buttons */
+}
+  .three-btn:last-child {
+    margin-right: 0; /* Remove space after the last button */
+  }
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Add some space between each row */
+}
+.inline-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align text and input in a single row */
+}
+.inline-container p {
+  text-align: left;
+    margin: 0;
+    font-size: 16px;
+    width: 150px; /* Set a fixed width for all labels */
+    font-family: 'Inter', sans-serif;
+    color: #9D9D9D;
+
+}
+.inline-container .form-select {
+    flex-grow: 1; /* Allow the input to take available space */
+    margin-left: 100px; /* Add some space between text and input */
+    height: 50px;
+    font-size: 16px;
+    border: 2px solid #0077B6;
+    border-radius: 15px;
+    font-family: 'Inter', sans-serif;
+    color: #9D9D9D;
+
+}
+.inline-container .date {
+  flex-grow: 1; /* Allow the input to take available space */
+  margin-left: 100px; /* Add some space between text and input */
+  height: 50px;
+  font-size: 16px;
+  border: 2px solid #0077B6;
+  border-radius: 15px;
+  font-family: 'Inter', sans-serif;
+  color: #9D9D9D;
+
+}
+.inline-container input {
+  flex-grow: 1; /* Allow the input to take available space */
+  margin-left: 100px; /* Add some space between text and input */
+  height: 50px;
+  font-size: 16px;
+  border: 2px solid #0077B6;
+  border-radius: 15px;
+  font-family: 'Inter', sans-serif;
+  color: #9D9D9D;
+}
+.table-row-clickable {
+  cursor: pointer;
+}
+
+.table-row-clickable:hover {
+  background-color: #e6f2ff; /* Light blue background on hover */
+  border-bottom: 2px solid #0077B6; /* Blue bottom border */
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1700px;
+  margin-bottom: 20px;
+}
+
+.dashboard-header {
+  color: #9D9D9D;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  margin-top: -10px;
+}
+
+.input-group {
+  margin-top: -20px;
+  width: 400px;
+  
+  
+}
+
+.input-group input {
+  background-color: transparent;
+}
+
+.input-group button {
+  background-color: #0077B6;
+  color: #FFF;
+}
+.table th:nth-child(1),
+.table td:nth-child(1) {
+  width: 35%; /* ปรับความกว้างตามต้องการ */
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  width: 20%; /* ปรับความกว้างตามต้องการ */
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 22%; /* ปรับความกว้างตามต้องการ */
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 20%; /* ปรับความกว้างตามต้องการ */
+}
+.table th:nth-child(5),
+.table td:nth-child(5) {
+  width: 30%; /* ปรับความกว้างตามต้องการ */
+}
+.input-icon {
+  position: absolute;
+  left: 10px; /* Adjust the position as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9D9D9D; /* Icon color */
+  border-radius: 50px;
+}
+
+.input-with-icon {
+  padding-left: 40px; /* Adjust the padding to make room for the icon */
+  color: #0077B6; 
+}
+.input-with-icon::placeholder {
+  color: #9D9D9D; /* Color of the placeholder text */
+}
+.btn-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0077B6;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  font-size: 50px; /* เพิ่มขนาดของฟอนต์ */
+
+}
+
+.float-bottom-right {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.status-cell {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  gap: 5px; /* Add space between the icon and the text */
+  margin-top: 20px;
+}
+.table-row-clickable {
+  background-color: transparent; /* Ensure no background color */
+  border: none; /* Ensure no border */
+}
+
+/* Ensure there are no additional borders or background colors applied to the table or cells */
+.table, .table tr, .table td {
+  background-color: #FFFFFF; /* Ensure no background color */
+  border: none; /* Ensure no border */
+}
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: none;
+
+
+}
+
+.modal-footer .btn {
+  margin: 0 5px;
+  
+}
+.custom-cancel-btn {
+  background-color: #FFFFFF;
+  color: #0077B6;
+  border: 2px solid #0077B6;
+  border-radius: 15px;
+  width: spx;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+}
+
+.custom-save-btn {
+  background-color: #0077B6;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 15px;
+  width: 200px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+}
+.dropdown-menu {
+  position: absolute; /* ตั้งตำแหน่งของ dropdown menu */
+  top: 80px; /* เลื่อนตำแหน่งตามแนวตั้งลงมา */
+  right: 0; /* เลื่อนตำแหน่งตามแนวนอนเพื่อให้ชิดขวา */
+  transform: translateX(-57%); /* เลื่อนตำแหน่งไปทางซ้ายให้ติดกับไอคอน PO */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  /* ปรับเปลี่ยนสีพื้นหลังและข้อความตามที่ต้องการ */
+  background-color: #FFFFFF; /* สีพื้นหลัง */
+  color: #000000; /* สีข้อความ */
+  border: none;
+}
+
+.dropdown-item {
+  /* ปรับเปลี่ยนสีพื้นหลังและข้อความตามที่ต้องการ */
+  background-color: #FFFFFF; /* สีพื้นหลัง */
+  color: #000000; /* สีข้อความ */
+}
+
+/* รีเซ็ตสไตล์ hover */
+.dropdown-menu:hover, .dropdown-item:hover {
+  background-color: #FFFFFF; /* สีพื้นหลัง */
+  color: #000000; /* สีข้อความ */
+}

@@ -1,0 +1,73 @@
+<!-- Section: Design Block -->
+<section class="">
+  <!-- Jumbotron -->
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" >
+    <div class="container" style="background-color: transparent;">
+      <div class="row gx-lg-5 align-items-center" >
+        <div class="col-lg-6 mb-5 mb-lg-0" >
+          <div class="">
+            <h1 class="display-3 fw-bold ls-tight text-end" style="color: white; font-size: 58px;font-family: 'Source Sans Pro', sans-serif;">
+              SOCIAL
+            </h1>
+          </div>
+          <div class="">
+            <h1 class="display-3 fw-bold ls-tight text-center" style="color: white; font-size: 100px;">
+              SENTIMENT
+            </h1>
+          </div>
+          <div class="">
+            <h1 class="display-3 fw-bold ls-tight text-start" style="color: white; font-size: 38px;font-family: 'Source Sans Pro', sans-serif;">
+              TRENDS PROJECT
+            </h1>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card" style="border-radius: 35px; width: 500px;height: 600px;margin-left: 60px;font-family: 'Source Sans Pro', sans-serif;">
+            <div class="card-body py-5 px-md-5 d-flex flex-column align-items-center justify-content-center" >
+              <form (ngSubmit)="signup()">
+                <div class="row">
+                  <div>
+                    <h2 class="form-heading text-center" style="color: #03045E; font-size: 48px; font-weight: bold; margin-bottom: 40px;">
+                      SIGN UP
+                    </h2>
+                  </div>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-3" >
+                  <input style="color: #0077B6; border-color: #0077B6; width: 360px; height: 50px;align-items: center;" [(ngModel)]="fullName" name="fullName" type="text" class="form-control" placeholder="Fullname"/>
+                </div>
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline mb-3">
+                  <input style="color: #0077B6; border-color: #0077B6; width: 360px; height: 50px;" [(ngModel)]="email" name="email" type="email" class="form-control" placeholder="Email"/>
+                </div>
+
+                <!-- Password input -->
+                <div data-mdb-input-init class="form-outline mb-3">
+                  <input style="color: #0077B6; border-color: #0077B6; width: 360px; height: 50px;" [(ngModel)]="password" name="password" type="password" class="form-control" placeholder="Password"/>
+                </div>
+
+                <!-- Confirm Password input -->
+                <div data-mdb-input-init class="form-outline mb-3">
+                  <input style="color: #0077B6; border-color: #0077B6; width: 360px; height: 50px;" [(ngModel)]="confirmPassword" name="confirmPassword" type="password" class="form-control" placeholder="Confirm Password"/>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4 center-button" 
+                style="font-size: 32px;font-weight: bold; width: 360px; height: 50px;background: #0077B6;">
+                  sign up
+                </button>
+
+                <!-- Register buttons -->
+                <div class="text-end " >
+                  <p style="color: #0077B6; margin-left: 170px; margin-top: 50px; font-family: 'Poppins', sans-serif;">Have an account? <a routerLink="/login" style="color: #03045E; text-decoration: none;">Login</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->

@@ -1,0 +1,526 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/login": {
+      "get": {
+        "operationId": "AppController_test",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/minio/receive/{bucketName}/{objectName}": {
+      "get": {
+        "operationId": "MinioController_read",
+        "summary": "Get file from Minio and convert to JSON",
+        "parameters": [
+          {
+            "name": "bucketName",
+            "required": true,
+            "in": "path",
+            "description": "Name of the bucket",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "objectName",
+            "required": true,
+            "in": "path",
+            "description": "Name of the object",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "minio"
+        ]
+      }
+    },
+    "/api/minio/test/{bucketName}/{objectName}": {
+      "get": {
+        "operationId": "MinioController_readandgetfile",
+        "summary": "Get file from Minio and save locally",
+        "parameters": [
+          {
+            "name": "bucketName",
+            "required": true,
+            "in": "path",
+            "description": "Name of the bucket",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "objectName",
+            "required": true,
+            "in": "path",
+            "description": "Name of the object",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "minio"
+        ]
+      }
+    },
+    "/api/minio/receivetest/{hashtag}": {
+      "get": {
+        "operationId": "MinioController_readfortest",
+        "summary": "Get file from Minio and convert to JSON",
+        "parameters": [
+          {
+            "name": "hashtag",
+            "required": true,
+            "in": "path",
+            "description": "Hashtag to search bucket",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "minio"
+        ]
+      }
+    },
+    "/api/minio/update-test/{hashtag}": {
+      "put": {
+        "operationId": "MinioController_updateFile",
+        "summary": "Update file on Minio",
+        "parameters": [
+          {
+            "name": "hashtag",
+            "required": true,
+            "in": "path",
+            "description": "Hashtag to search bucket",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "minio"
+        ]
+      }
+    },
+    "/api/messages": {
+      "post": {
+        "operationId": "KafkaController_sendAndNotifyClients",
+        "summary": "Send a message to Kafka and notify clients via WebSocket",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The message has been successfully sent and clients notified."
+          }
+        },
+        "tags": [
+          "kafka"
+        ]
+      }
+    },
+    "/api/messages/search": {
+      "get": {
+        "operationId": "KafkaController_searchByHashtag",
+        "summary": "Search for bucket and file by hashtag",
+        "parameters": [
+          {
+            "name": "hashtag",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bucket and file information retrieved successfully."
+          }
+        },
+        "tags": [
+          "kafka"
+        ]
+      }
+    },
+    "/api/messages/hashtag": {
+      "get": {
+        "operationId": "KafkaController_findAllHashtags",
+        "summary": "Get all hashtags",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Hashtags retrieved successfully."
+          }
+        },
+        "tags": [
+          "kafka"
+        ]
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "operationId": "AuthController_login",
+        "summary": "Log in a user",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "user@example.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "password123"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/auth/signup": {
+      "post": {
+        "operationId": "AuthController_signup",
+        "summary": "Sign up a new user",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "fullName": {
+                    "type": "string",
+                    "example": "John Doe"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "user@example.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "password123"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "operationId": "AuthController_logout",
+        "summary": "Log out the current user",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "auth"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/dags": {
+      "get": {
+        "operationId": "DagsController_getDags",
+        "summary": "Get all DAGs",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "DAGs retrieved successfully."
+          }
+        },
+        "tags": [
+          "dags"
+        ]
+      }
+    },
+    "/api/dags/create": {
+      "post": {
+        "operationId": "DagsController_createDag",
+        "summary": "Create a new DAG",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDagDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "DAG created successfully."
+          }
+        },
+        "tags": [
+          "dags"
+        ]
+      }
+    },
+    "/api/dags/pause-all": {
+      "patch": {
+        "operationId": "DagsController_setIsPaused",
+        "summary": "Pause or unpause all DAGs",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "is_paused": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "All DAGs paused or unpaused successfully."
+          }
+        },
+        "tags": [
+          "dags"
+        ]
+      }
+    },
+    "/api/dags/{dagId}": {
+      "patch": {
+        "operationId": "DagsController_updateDag",
+        "summary": "Update a specific DAG",
+        "parameters": [
+          {
+            "name": "dagId",
+            "required": true,
+            "in": "path",
+            "description": "ID of the DAG to update",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDagDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "DAG updated successfully."
+          }
+        },
+        "tags": [
+          "dags"
+        ]
+      },
+      "delete": {
+        "operationId": "DagsController_deleteDag",
+        "summary": "Delete a specific DAG",
+        "parameters": [
+          {
+            "name": "dagId",
+            "required": true,
+            "in": "path",
+            "description": "ID of the DAG to delete",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "DAG deleted successfully."
+          }
+        },
+        "tags": [
+          "dags"
+        ]
+      }
+    },
+    "/api/dags/{dagId}/run": {
+      "post": {
+        "operationId": "DagsController_runDag",
+        "summary": "Run a specific DAG",
+        "parameters": [
+          {
+            "name": "dagId",
+            "required": true,
+            "in": "path",
+            "description": "ID of the DAG to run",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "DAG run successfully."
+          }
+        },
+        "tags": [
+          "dags"
+        ]
+      }
+    },
+    "/api/dags/all": {
+      "get": {
+        "operationId": "DagsController_getAllDags",
+        "summary": "Get all DAGs (alternative endpoint)",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "All DAGs retrieved successfully."
+          }
+        },
+        "tags": [
+          "dags"
+        ]
+      }
+    },
+    "/api/dags/{dagId}/{dagRunId}/stop": {
+      "post": {
+        "operationId": "DagsController_stopDag",
+        "summary": "Stop a specific DAG run",
+        "parameters": [
+          {
+            "name": "dagId",
+            "required": true,
+            "in": "path",
+            "description": "ID of the DAG",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dagRunId",
+            "required": true,
+            "in": "path",
+            "description": "ID of the DAG run to stop",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "DAG run stopped successfully."
+          }
+        },
+        "tags": [
+          "dags"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Full stack development",
+    "description": "Here is the list of api that is used in management system for social sentiment analysis project",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "CreateDagDto": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+}

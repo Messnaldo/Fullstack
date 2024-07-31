@@ -1,0 +1,98 @@
+# # FROM quay.io/minio/minio as minio
+
+# # ENV MINIO_ROOT_USER=ROOTUSER
+# # ENV MINIO_ROOT_PASSWORD=12345678
+
+# # EXPOSE 9000
+# # EXPOSE 9001
+
+# FROM node:20-alpine as build
+
+# WORKDIR /usr/src/app
+# COPY backend/package*.json ./
+# COPY backend/tsconfig.build.json ./
+# COPY backend/tsconfig.json ./
+
+
+# COPY ./backend .
+# RUN rm package-lock.json
+
+
+# RUN npm install
+
+# RUN npm run build
+# EXPOSE 3000
+
+# CMD ["npm","run","start:dev"]
+
+# FROM node:20 as build
+
+# WORKDIR /usr/src/app
+# COPY frontend/package*.json ./
+# COPY frontend/tsconfig.json ./
+# COPY frontend/tsconfig.spec.json ./
+# COPY frontend/tsconfig.app.json ./
+# COPY frontend/angular.json ./
+
+# RUN npm install
+
+# COPY ./frontend .
+# RUN npm run build --prod
+
+# # EXPOSE 4200
+# # CMD [ "ng", "serve" ]
+# FROM nginx:1.27.0
+# COPY --from=build /usr/src/app/dist/frontend /usr/share/nginx/html
+# COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
+# CMD ["nginx", "-g", "daemon off;"]
+
+FROM node:20 as build-frontend
+WORKDIR /usr/src/app
+COPY frontend/ ./
+RUN rm -rf node_modules
+RUN npm install
+RUN npm run build --prod
+
+FROM node:20-alpine
+
+WORKDIR /usr/src/app
+COPY backend/package.json ./
+COPY backend/tsconfig.build.json ./
+COPY backend/tsconfig.json ./
+
+
+COPY ./backend .
+RUN rm package-lock.json
+RUN rm -rf node_modules/
+
+
+
+RUN npm install
+RUN npm rebuild bcrypt
+
+COPY --from=build-frontend /usr/src/app/dist/frontend /usr/src/app/client
+RUN mv /usr/src/app/client/browser/index.csr.html /usr/src/app/client/browser/index.html
+EXPOSE 3000
+
+CMD ["npm","run","start:dev"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

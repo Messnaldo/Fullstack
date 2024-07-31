@@ -1,0 +1,193 @@
+.dropdown {
+  .btn{
+
+
+  border-radius: 10px; /* ทำให้ปุ่มกลม */
+  width: 50px; /* ความกว้างของปุ่ม */
+  height: 50px; /* ความสูงของปุ่ม */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 26px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #03045E, #00B4D8); 
+  margin-right: 20px;
+  margin-top: 16px;
+  border: none; /* เอา border ออก */
+}
+}
+.dropdown {
+  position: relative; /* ตั้ง parent element ให้มีตำแหน่ง relative */
+}
+
+.dropdown-menu {
+  position: absolute; /* ตั้งตำแหน่งของ dropdown menu */
+  top: 80px; /* เลื่อนตำแหน่งตามแนวตั้งลงมา */
+  right: 0; /* เลื่อนตำแหน่งตามแนวนอนเพื่อให้ชิดขวา */
+  transform: translateX(-57%); /* เลื่อนตำแหน่งไปทางซ้ายให้ติดกับไอคอน PO */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  /* ปรับเปลี่ยนสีพื้นหลังและข้อความตามที่ต้องการ */
+  background-color: #FFFFFF; /* สีพื้นหลัง */
+  color: #000000; /* สีข้อความ */
+}
+
+.dropdown-item {
+  /* ปรับเปลี่ยนสีพื้นหลังและข้อความตามที่ต้องการ */
+  background-color: #FFFFFF; /* สีพื้นหลัง */
+  color: #000000; /* สีข้อความ */
+}
+
+/* รีเซ็ตสไตล์ hover */
+.dropdown-menu:hover, .dropdown-item:hover {
+  background-color: #FFFFFF; /* สีพื้นหลัง */
+  color: #000000; /* สีข้อความ */
+}
+  .nav-item{
+    .nav-link { 
+    font-weight: bold;
+    color: #03045E;
+    font-size: 40px;
+    margin-left: 13px;
+
+    
+    }
+  }
+  .p-5 {
+    background: #FFFFFF;
+  
+  
+  .inactive-button {
+    width: 193px; /* ความกว้างของปุ่ม */
+    height: 52px;
+    background: #0077B6;
+    border-radius: 5px;
+    border: none; /* ลบ border ออก */
+    margin-bottom: 20px;
+    /* CSS สำหรับรูปภาพในปุ่ม */
+    .button-image {
+      margin-left: -25px;
+      width: 43px; /* ความกว้างของรูปภาพ */
+      height: 43px;
+      border-radius: 5px;
+      border: none; /* ลบ border ออก */
+    }
+  
+    /* CSS สำหรับข้อความในปุ่ม */
+    .button-text {
+      font-weight: bold;
+      color: #FFFFFF;
+      font-size: 20px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+  }
+  
+  }
+  
+  .search p {
+    font-weight: bold;
+    color: #9D9D9D; /* สีข้อความใน search */
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 5px;
+    .highlight {
+      background: linear-gradient(135deg, #03045E, #00B4D8); /* สีพื้นหลังแบบ gradient */
+      -webkit-background-clip: text; /* สีที่คุณต้องการเปลี่ยนสีส่วนที่เน้น */
+  }
+  }
+  .search input{
+
+    border:none;
+    outline: none; 
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    color: transparent; 
+  background: linear-gradient(135deg, #03045E, #00B4D8); /* สีพื้นหลังแบบ gradient */
+  -webkit-background-clip: text; /* เพื่อให้ gradient ปรากฏเฉพาะในข้อความ */
+  background-clip: text;
+  margin-bottom: 5px;
+  
+  
+  }
+  .search input::placeholder {
+    color: transparent; /* ทำให้ข้อความใน input เป็นโปร่งใส */
+  background: linear-gradient(-72deg, #03045E, #00B4D8); /* สีพื้นหลังแบบ gradient */
+  -webkit-background-clip: text; /* เพื่อให้ gradient ปรากฏเฉพาะในข้อความ */
+  background-clip: text;
+  }
+  .Emoji {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* จัดการช่องว่างระหว่างปุ่มให้เท่า ๆ กัน */
+    align-items: center; /* จัดปุ่มให้อยู่ตรงกลางแนวตั้ง */
+    gap: 30px; /* ลดขนาดช่องว่างระหว่างปุ่ม */
+}
+
+  .Emoji .inactive-button {
+    
+    width: 150px; /* ความกว้างของปุ่ม */
+    height: 52px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: none; /* ลบ border ออก */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ปุ่ม */
+    transition: box-shadow 0.3s ease; 
+}
+
+.Emoji .inactive-button .button-text{
+  color: #000000; /* เปลี่ยนสีของข้อความในปุ่ม */
+  font-size: 25px; /* ขนาดของข้อความ */
+  
+  font-family: 'Inter';
+
+}
+.Emoji .inactive-button .button-image {
+    margin-left: -0px;
+    width: 43px; /* ความกว้างของรูปภาพ */
+    height: 43px;
+    border-radius: 5px;
+    border: none; /* ลบ border ออก */
+}
+.custom-background {
+  background-color: #f6f6f6; /* เปลี่ยนสีพื้นหลังเป็นสีเทาอ่อน */
+}
+.white-background{
+  background-color: #FFFFFF; /* เปลี่ยนสีพื้นหลังเป็นสีเทาอ่อน */
+}
+.col-sm-auto {
+
+  width: 85px;
+}
+.navbar{
+  height: 85px;
+}
+.nav-item .nav-link .material-symbols-outlined{
+  width: 40px;
+  height: 40px;
+}
+h5 {
+  color: #9D9D9D; /* ตั้งค่าสีของตัวอักษร */
+  font-size: 45px; /* ตั้งค่าขนาดตัวอักษร */
+  font-weight: bold; /* ตั้งค่าความหนาของตัวอักษรเป็น bold */
+  /* font-style: bold; */ /* ไม่มีการใช้ font-style ในรูปแบบที่ถูกต้อง */
+}
+h3 {
+  color: #0077B6; /* ตั้งค่าสีของตัวอักษร */
+  font-size: 75px; /* ตั้งค่าขนาดตัวอักษร */
+  font-weight: bold; /* ตั้งค่าความหนาของตัวอักษรเป็น bold */
+  /* font-style: bold; */ /* ไม่มีการใช้ font-style ในรูปแบบที่ถูกต้อง */
+}
+.sentiment-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sentiment-container img {
+  margin-right: 10px;
+}

@@ -1,0 +1,266 @@
+
+<nav class="navbar navbar-expand-sm navbar-light sticky-top" style="background-color: #FBFFFE;">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" style="color: #03045E;">SENTIMENT</a>
+      </li>
+    </ul>
+    <div class="dropdown">
+      <button class="btn btn-primary custom-dropdown-toggle" style="border:none;" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        PO
+      </button>
+      <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownMenuButton">
+        <li><a (click)="logout()" class="dropdown-item" style="text-align: center; color: #03045E; font-size:22px;" href="#">Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid white-background" style="background-color: #f6f6f6;">
+  <div class="row">
+    <div class="col-sm-auto sticky-top sticky-sidebar" style="position: fixed; margin-top: 85px; background-color: #FBFFFE; width: 90px;">
+      <div class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
+        <a class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" 
+        data-bs-original-title="Icon-only">
+          <i class="bi-bootstrap fs-1"></i>
+        </a>
+        <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
+          <li>
+            <a routerLink="/analysis" class="nav-link py-3 px-2 btn btn-outline-primary text-center" style="background: #FBFFFE; border: none;" 
+            title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="search">
+              <div style="text-align: center; color: #9D9D9D; width: 50px; height: 50px; font-weight: semi-bold; font-family: 'Inter', sans-serif; font-size: 14px;">
+                <span class="material-symbols-outlined" style="font-size: 30px;">
+                  search
+                </span>
+                <br>
+                Analysis
+              </div>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page" href="#"
+              class="nav-link py-3 px-2 btn btn-outline-primary text-center" style="background: #FBFFFE; border: none;" 
+              title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="search">
+              <div style="text-align: center; color: #9D9D9D; width: 50px; height: 50px; font-weight: semi-bold; font-family: 'Inter', sans-serif; font-size: 14px;">
+                <span class="material-symbols-outlined" style="width: 50px; font-size: 40px; font-weight: semi-bold;">
+                  manage_search
+                </span>
+                <br>
+                Test
+              </div>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/label" routerLinkActive="active" ariaCurrentWhenActive="page" href="#" 
+            class="nav-link py-3 px-2 btn btn-outline-primary text-center" 
+            style="color: white; background: #0077B6; 
+            width: 50px; height: 50px; box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); margin-top: 16px;
+            display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif;" title="" data-bs-toggle="tooltip" 
+            data-bs-placement="right" data-bs-original-title="label">
+              <span class="material-symbols-outlined" style="font-size: 40px; margin-left: 5px;">
+                label
+              </span>
+              <br>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/flow" routerLinkActive="active" ariaCurrentWhenActive="page" href="#" class="nav-link py-3 px-2 btn btn-outline-primary text-center" 
+            title="" data-bs-toggle="tooltip" data-bs-placement="right" style="background: #FBFFFE; border: none; font-family: 'Inter', sans-serif;" 
+            data-bs-original-title="label">
+              <div style="text-align: center; color: #9D9D9D; font-weight: semi-bold; font-size: 14px;">
+                <span class="material-symbols-outlined" style="font-size: 40px; font-weight: semi-bold;">
+                  tune
+                </span>
+                <br>
+                Control
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm p-3 custom-background center-content">
+      <div class="p-5 text-center custom-background">
+
+        <div class="header-container" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;width: 1400px; margin-left: 60px;">
+          <h1 class="dashboard-header" style="color: #9D9D9D; font-size: 35px; font-weight: bold; font-family: 'Inter', sans-serif; margin-top: -10px; margin-left: 0px; margin-right: 400px;">LABELS</h1>
+          
+          <div class="input-group" style="width: 350px; margin-top: -16px; margin-right: -80px; height
+          :46px;">
+            <span class="input-group-text" id="search-addon" style="background-color: transparent; border: none;">
+              <span class="material-symbols-outlined input-icon">search</span>
+            </span>
+            <input type="search" [(ngModel)]="contextSearchTerm" class="form-control rounded input-with-icon custom-placeholder" 
+                   placeholder="Context" aria-label="Search" aria-describedby="search-addon" 
+                   style="background-color: transparent; border-color: #0077B6; color: #0077B6;">
+            <button type="button" class="btn btn-outline-primary" style="background-color: #0077B6; color: #FFF;" (click)="filterContext()">Search</button>
+          </div>
+          
+          <div class="dropdown" style="margin-top: -30px; margin-right: -100px;">
+            <button class="btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" [attr.aria-expanded]="isDropdown1Open"
+            (click)="toggleDropdown('dropdown1')"
+            [ngClass]="{'dropdown-open': isDropdown1Open}"
+            style="width: 200px; border-radius: 15px; background: #F6F6F6; color: #9D9D9D; border-color: #0077B6; font-weight: normal; font-size: 18px;">
+              <!-- Select Hashtag
+              <span class="material-symbols-outlined">keyboard_arrow_down</span> -->
+              <span [ngClass]="{'text-blue': isDropdown1Open, 'text-grey': !isDropdown1Open}" style="margin-right: 20px;">{{ selectedHashtag || 'Select Hashtag' }}</span>
+              <span class="material-symbols-outlined" [ngClass]="{'text-blue': isDropdown1Open, 'text-grey': !isDropdown1Open}">keyboard_arrow_down</span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+              <div class="input-container">
+              <input type="text" [(ngModel)]="hashtagSearchTerm" (input)="filterHashtags()" (keyup.enter)="searchHashtag()" class="form-control  border-0 border-bottom shadow-none mb-2 custom-placeholder sticky-input" placeholder="Search..."
+                style="width: 200px; border-radius: 15px; border-color: #0077B6; color: #0077B6;">
+              </div>
+              <div class="dropdown-scrollable ">
+              <li *ngFor="let hashtag of filteredHashtags" >
+                <a class="dropdown-item" (click)="selectHashtag(hashtag)" style="color: #0077B6;">{{ hashtag }}</a>
+              </li>
+            </div>
+            </ul>
+          </div>
+          
+          <div class="dropdown king" style="margin-top: -30px;">
+            <button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" [attr.aria-expanded]="isDropdown2Open"
+            (click)="toggleDropdown('dropdown2')"
+            [ngClass]="{'dropdown-open': isDropdown2Open}"
+            style="width: 170px; border-radius: 15px; background: #F6F6F6; color: #9D9D9D; border-color: #0077B6; font-weight: normal; font-size: 18px;">
+            
+              <span [ngClass]="{'text-blue': isDropdown2Open, 'text-grey': !isDropdown2Open}">Filter</span>
+              <span class="material-symbols-outlined" [ngClass]="{'text-blue': isDropdown2Open, 'text-grey': !isDropdown2Open}">filter_alt</span>
+            </button>
+            <ul class="dropdown-menu text-small " aria-labelledby="dropdownMenuButton2" style="width: 170px;">
+              <li class="dropdown-header" style="text-align: left; font-size: 18px;">Filter Context</li>
+              <li><a class="dropdown-item" [ngClass]="{'text-primary': isLabelFilterActive('No Label'), 'text-gray': !isLabelFilterActive('No Label')}" 
+                (click)="toggleLabelFilter('No Label')">No Label</a></li>
+              <li><a class="dropdown-item"   [ngClass]="{'text-primary': isLabelFilterActive('pre-labeled'), 'text-gray': !isLabelFilterActive('pre-labeled')}"
+                (click)="toggleLabelFilter('pre-labeled')">Pre-Labeled</a></li>
+              <li><a class="dropdown-item" [ngClass]="{'text-primary': isLabelFilterActive('Custom-labeled'), 'text-gray': !isLabelFilterActive('Custom-labeled')}" 
+                (click)="toggleLabelFilter('Custom-labeled')">Labeled</a></li>
+              <li class="dropdown-divider" ></li>
+              <li class="dropdown-header" style="text-align: left;font-size: 18px;">Filter label</li>
+              <li><a class="dropdown-item" (click)="toggleSentimentFilter(1)"  [ngClass]="{'text-primary': isSentimentFilterActive(1), 'text-gray': !isSentimentFilterActive(1)}" >Positive</a></li>
+              <li><a class="dropdown-item" (click)="toggleSentimentFilter(0)"  [ngClass]="{'text-primary': isSentimentFilterActive(0), 'text-gray': !isSentimentFilterActive(0)}">Neutral</a></li>
+              <li><a class="dropdown-item" (click)="toggleSentimentFilter(-1)"  [ngClass]="{'text-primary': isSentimentFilterActive(-1), 'text-gray': !isSentimentFilterActive(-1)}" >Negative</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div *ngIf="!hasSearched" class="search-message d-flex flex-column align-items-center justify-content-center" style="font-family: 'Inter', sans-serif; height: 55vh; position: relative; z-index: 1;">
+          <h1 class="dashboard-header" style="color: #9D9D9D; font-size: 35px; font-weight: bold; font-family: 'Inter', sans-serif; margin: 0;">CONTEXT</h1>
+          <div class="text-center p-4" style="background: white; border-radius: 15px;  margin-top: 50px; width: 450px; height:170px">
+            <p style="font-size: 20px; color: #9D9D9D;">Start by entering a tag to search.</p>
+            <img src="confuse.png" alt="Confuse Emoji" style="width: 50px; height: 50px; margin-top: 20px;">
+          </div>
+        </div>
+     
+        <div *ngIf="showNotification" class="custom-notification-overlay">
+          <div class="custom-notification-content">
+            <h2>Search Notification</h2>
+            <hr class="notification-divider">
+            <p>{{ notificationMessage }}</p>
+            <button (click)="closeNotification()" class="btn btn-primary">Cancel</button>
+          </div>
+        </div>
+       
+        <div *ngIf="hasSearched && filteredResults.length > 0">
+          <div class="search-results" style="font-family: 'Inter', sans-serif;">
+            <div class="table-container" style="margin-top: 20px; margin-left: 50px; ">
+              <table class="table" style="padding: 30px;">
+                <thead>
+                  <tr>
+                    <th scope="col">Context</th>
+                    <th scope="col">Confident Level</th>
+                   
+                    <th scope="col">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <span>Label</span>
+                        <button class="btn btn-sm three-btn ms-auto"  style="margin-left: auto; margin-right: 120px;"
+                                (click)="toggleEditMode()" 
+                                [attr.data-bs-toggle]="editMode ? 'modal' : null"
+                                [attr.data-bs-target]="editMode ? '#confirmModal' : null"
+                                style="background: #0077B6; color: #FFFFFF; border-radius: 15px; border-color:#0077B6; width: 70px; height:50px; font-size: 22px;">
+                          {{ editMode ? 'Save' : 'Edits' }}
+                        </button>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let result of filteredResults">
+                    <td>
+                      <span class="badge" style="background-color: #0077B6; color: white; padding: 5px 10px; border-radius: 5px; margin-right: 10px;
+                      font-family: 'Inter', sans-serif; font-weight: normal; font-size: 12px; width: 100px; display: inline-block; text-align: center;">
+                      <ng-container *ngIf="result.label_type === 'Custom-labeled'; else otherLabel">
+                        Labeled
+                      </ng-container>
+                      <ng-template #otherLabel>
+                        <ng-container *ngIf="result.label_type === 'pre-labeled'; else noLabel">
+                          Pre-labeled
+                        </ng-container>
+                        <ng-template #noLabel>
+                          {{ result.label_type || 'No Label' }}
+                        </ng-template>
+                      </ng-template>
+                    </span>
+                    <span style="font-size: 20px;">
+                      {{ result.text }}
+                    </span>
+                    </td>
+                    <td>
+                      {{ isValidConfidentLevel(result.confident_level) && (result.label_type !== 'Custom-labeled' && result.label_type !== 'No Label') ? result.confident_level : '-' }}
+                    </td>
+                    <td>
+                      <button 
+                        class="btn btn-sm three-btn" style="border-radius: 25px;"
+                        [ngClass]="{ 'btn-nolabel': result.label_type === 'No Label', 'btn-selected': result.label === 1 }" 
+                        (click)="toggleLabel(result, 1)" 
+                        [disabled]="!editMode" 
+                        [style.background]="result.label === 1 ? '#0077B6' : '#FFFFFF'" 
+                        [style.color]="result.label === 1 ? '#FFFFFF' : '#0077B6'" 
+                        [style.border-color]="'#0077B6'">Positive</button>
+                      <button 
+                        class="btn btn-sm three-btn" style="border-radius: 25px;"
+                        [ngClass]="{ 'btn-nolabel': result.label_type === 'No Label', 'btn-selected': result.label === 0 }" 
+                        (click)="toggleLabel(result, 0)" 
+                        [disabled]="!editMode" 
+                        [style.background]="result.label === 0 ? '#0077B6' : '#FFFFFF'" 
+                        [style.color]="result.label === 0 ? '#FFFFFF' : '#0077B6'" 
+                        [style.border-color]="'#0077B6'">Neutral</button>
+                      <button 
+                        class="btn  three-btn" style="border-radius: 25px;"
+                        [ngClass]="{ 'btn-nolabel': result.label_type === 'No Label', 'btn-selected': result.label === -1 }" 
+                        (click)="toggleLabel(result, -1)" 
+                        [disabled]="!editMode" 
+                        [style.background]="result.label === -1 ? '#0077B6' : '#FFFFFF'" 
+                        [style.color]="result.label === -1 ? '#FFFFFF' : '#0077B6'" 
+                        [style.border-color]="'#0077B6'">Negative</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade custom-backdrop" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true" style="font-family: 'Inter', sans-serif;">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="font-size: 24px; font-weight: bold; color: #0077B6;" id="confirmModalLabel">Do you want to change?</h5>
+      </div>
+      <div class="modal-body" style="font-size: 20px; color: #9D9D9D;">
+        Are you sure about making this change?
+      </div>
+      <div class="modal-footer d-flex justify-content-between" style="border-top: none;">
+        <button type="button" class="btn" style="font-weight: bold; width: 100px; background: #FFFFFF; color: #0077B6; border-radius: 10px; border-color:#0077B6" data-bs-dismiss="modal" (click)="cancelSave()">Cancel</button>
+        <button type="button" class="btn" style="font-weight: bold; width: 100px; background: #0077B6; color: #FFFFFF; border-radius: 10px; border-color:#0077B6" data-bs-dismiss="modal" (click)="confirmSave()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

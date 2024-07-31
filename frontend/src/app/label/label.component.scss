@@ -1,0 +1,374 @@
+.three-btn {
+    width: 110px; 
+    height: 40px; 
+    margin-right: 20px; /* Add space between buttons */
+  }
+  
+  .three-btn:last-child {
+    margin-right: 0; /* Remove space after the last button */
+  }
+  .input-group .input-group-text {
+    display: flex;
+    align-items: center;
+    border: none;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 35px; /* Adjust the position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9D9D9D; /* Icon color */
+    border-radius: 50px;
+  }
+  .input-with-icon {
+    padding-left: 40px; /* Adjust padding to make space for the icon */
+  }
+
+.table {
+    width: 100%; /* Ensures the table stretches to the width of its container */
+    border-collapse: collapse; /* Removes the space between borders */
+    background-color: #FFFFFF; /* White background for better visibility */
+  }
+  
+  .table {
+    border: 1px solid #0077B6; /* Blue borders for the table and cells */
+    padding: 8px; /* Padding inside cells for better text visibility */
+    border-radius: 15px;
+  }
+  
+  .table th {
+    background-color: #FBFFFE; /* Light background color for header */
+   color: #0077b6; /* Dark blue text for contrast */
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Zebra striping for rows */
+  }
+  
+  .table tbody tr:hover {
+    background-color: #ddd; /* Highlight on row hover */
+  }
+  
+  .label {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #0077b6;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-right: 8px;
+    font-size: 12px;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba}
+    .btn-selected {
+      color: #FFFFFF !important;
+      background: #0077B6 !important;
+    }
+    .btn-nolabel {
+      background-color: #FFFFFF !important;
+      color: #0077B6 !important;
+      border-color: #0077B6 !important;
+    }
+    
+    .badge-nolabel {
+      background-color: #FFFFFF !important;
+      color: #0077B6 !important;
+    }
+    .table th:nth-child(1),
+.table td:nth-child(1) {
+  width: 50%; /* ปรับความกว้างตามต้องการ */
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  width: 20%; /* ปรับความกว้างตามต้องการ */
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 30%; /* ปรับความกว้างตามต้องการ */
+}
+.blur-background {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Ensure the modal content itself is not blurred */
+.modal-content {
+  filter: none;
+  pointer-events: auto;
+  user-select: auto;
+}
+.custom-backdrop {
+  background-color: rgba(78, 70, 70, 0.05); /* RGB color with 5% opacity */
+  opacity: 99;
+}
+
+/* Ensure the backdrop class is applied */
+.dropdown-menu {
+  position: absolute; /* ตั้งตำแหน่งของ dropdown menu */
+  top: 80px; /* เลื่อนตำแหน่งตามแนวตั้งลงมา */
+  right: 0; /* เลื่อนตำแหน่งตามแนวนอนเพื่อให้ชิดขวา */
+  transform: translateX(-57%); /* เลื่อนตำแหน่งไปทางซ้ายให้ติดกับไอคอน PO */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  /* ปรับเปลี่ยนสีพื้นหลังและข้อความตามที่ต้องการ */
+  background-color: #FFFFFF; /* สีพื้นหลัง */
+  color: #000000; /* สีข้อความ */
+}
+
+.dropdown-item {
+  /* ปรับเปลี่ยนสีพื้นหลังและข้อความตามที่ต้องการ */
+  background-color: #FFFFFF; /* สีพื้นหลัง */
+  color: #000000; /* สีข้อความ */
+}
+
+/* รีเซ็ตสไตล์ hover */
+.dropdown-menu:hover, .dropdown-item:hover {
+  background-color: #FFFFFF; /* สีพื้นหลัง */
+  color: #000000; /* สีข้อความ */
+}
+.dropdown {
+  .btn{
+
+
+  border-radius: 10px; /* ทำให้ปุ่มกลม */
+  width: 50px; /* ความกว้างของปุ่ม */
+  height: 50px; /* ความสูงของปุ่ม */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 26px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #03045E, #00B4D8); 
+  margin-right: 20px;
+  margin-top: 16px;
+  /* เอา border ออก */
+}
+}
+.custom-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  z-index: 1050;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-notification h2 {
+  font-size: 24px;
+  color: #0077B6;
+  font-weight: bold;
+}
+
+.custom-notification p {
+  font-size: 18px;
+  color: #C1C1C1;
+}
+
+.custom-notification button {
+  background: #0077B6;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.custom-notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.custom-notification-content {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 400px;
+}
+
+.custom-notification-content h2 {
+  font-size: 24px;
+  color: #0077B6;
+  font-weight: bold;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.custom-notification-content p {
+  font-size: 18px;
+  color: #C1C1C1;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+
+
+}
+
+
+.custom-notification-content .btn-primary {
+  background: #0077B6;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 100%; /* Set button width to 100% */
+  display: block; /* Display button as block element */
+  font-family: 'Inter', sans-serif;
+}
+.custom-notification-content .notification-divider {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #C1C1C1;
+}
+
+
+.table-row-clickable {
+  background-color: transparent; /* Ensure no background color */
+  border: none; /* Ensure no border */
+}
+
+.table, .table tr, .table td {
+  background-color: #FFFFFF; /* Ensure no background color */
+  border: none; /* Ensure no border */
+}
+.table-row-clickable {
+  cursor: pointer;
+}
+
+.table-row-clickable:hover {
+  background-color: #e6f2ff; /* Light blue background on hover */
+  border-bottom: 2px solid #0077B6; /* Blue bottom border */
+}
+
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px; /* Adjust this value to control the space between elements */
+}
+
+.header-container h1 {
+  color: #9D9D9D;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  margin-top: -10px;
+  margin-left: 100px;
+  margin-right: 300px;
+}
+
+.header-container .input-group {
+  width: 350px;
+  margin-top: -20px;
+  margin-right: 10px;
+}
+
+.header-container .dropdown {
+  margin-top: -30px;
+  margin-right: 10px;
+}
+
+.header-container .dropdown.king {
+  margin-top: -30px;
+}
+.text-blue {
+  color: #0077B6 ;
+}
+
+.text-grey {
+  color: grey ;
+}
+
+.dropdown-open {
+  .material-symbols-outlined {
+    color: #0077B6;
+  }
+}
+.bg-primary {
+  background-color: #0077B6 !important; /* Blue background */
+}
+
+.text-white {
+  color: #FFFFFF !important; /* White text */
+}
+.text-primary {
+  color: #0077B6 !important; /* Blue text */
+}
+
+.text-gray {
+  color: #9D9D9D !important; /* Gray text */
+}
+.custom-placeholder::placeholder {
+  color: #9D9D9D; /* Blue color for the placeholder text */
+  opacity: 1; /* Ensures the placeholder is fully opaque */
+}
+.dropdown-menuKKK {
+  max-height: 200px; /* ปรับความสูงตามที่ต้องการ */
+
+  border-radius: 15px; /* เปิดใช้งานการเลื่อนแนวตั้ง */
+  padding-top: 0px; /* ลดระยะห่างด้านบน */
+  position: relative;
+  
+}
+.sticky-input {
+  position: sticky; /* ทำให้ input อยู่ติดกับด้านบน */
+  top: 0;
+  background-color: white; /* เพื่อให้พื้นหลัง input เห็นชัด */
+  z-index: 1; /* เพื่อให้อยู่เหนือรายการอื่น */
+  margin-bottom: 0px; /* ลดระยะห่างด้านล่าง */
+}
+
+
+
+.dropdown-scrollable {
+  max-height: 138px; /* ลดความสูงเพื่อให้มีพื้นที่สำหรับ input */
+  overflow-y: auto; /* เปิดใช้งานการเลื่อนแนวตั้ง */
+  padding-top: 0;
+}
+.dropdown-scrollable::-webkit-scrollbar {
+  width: 8px; /* ความกว้างของ scrollbar */
+}
+
+.dropdown-scrollable::-webkit-scrollbar-track {
+  background: #FFFFFF; /* พื้นหลังของ scrollbar track */
+}
+
+.dropdown-scrollable::-webkit-scrollbar-thumb {
+  background: #707070; /* สีของ scrollbar thumb */
+  border-radius: 10px; /* ขอบมนของ scrollbar thumb */
+}
+
+.dropdown-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #005f8c; /* สีของ scrollbar thumb เมื่อ hover */
+}

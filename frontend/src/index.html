@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920, initial-scale=1">
+  <title>Social Sentiment Trends Project</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/5/5a/X_icon_2.svg">
+  <link rel="stylesheet"  href="styles.scss">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" 
+  rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+   rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+   
+   <style>
+    .dropdown-menu {
+      left: 50%;
+      transform: translateX(-50%);
+    } 
+   
+  .table th, .table td {
+    width: 150px; /* กำหนดความกว้างของแต่ละคอลัมน์ */
+    height: 50px; /* กำหนดความสูงของแต่ละแถว */
+    border: none; 
+  }
+  .table th {
+    color: #0077B6;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    border: none;
+  }
+  .table td {
+    color: #9D9D9D;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    border: none;
+  }
+  .table-container {  border-radius: 15px;
+
+    margin-left: 0px;
+    width: 1400px;
+  max-height: 660px; /* จำกัดความสูงของตาราง */
+  overflow-y: auto; /* เพิ่มการเลื่อนแนวตั้งเมื่อความสูงเกิน */
+  overflow-x: hidden; /* ป้องกันไม่ให้ border-radius ถูกคลุม */
+}
+.table-container::-webkit-scrollbar {
+  width: 12px; /* ความกว้างของ scrollbar */
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* สีของ track */
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #888; /* สีของ scrollbar thumb */
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #0077B6; /* สีของ scrollbar thumb เมื่อ hover */
+}
+
+
+.table {
+  
+  border-collapse: separate; /* ทำให้ border-radius ทำงาน */
+  border-spacing: 0; /* ลบระยะห่างระหว่างเซลล์ */
+  width: 100%;
+  border-radius: 15px;
+  
+}
+.table th, .table td {
+  width: 150px; /* กำหนดความกว้างของแต่ละคอลัมน์ */
+  height: 50px; /* กำหนดความสูงของแต่ละแถว */
+  padding: 15px;
+  border: 1px solid #ddd; /* ขอบของเซลล์ */
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table thead tr:first-child th:first-child {
+  border-top-left-radius: 15px;
+}
+
+.table thead tr:first-child th:last-child {
+  border-top-right-radius: 15px;
+}
+
+.table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 15px;
+}
+
+.table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 15px;
+}
+.table thead th {
+  
+  position: sticky;
+  top: 0;
+  background-color: #FFF; /* Match the table header background color to the table's background */
+  z-index: 1; /* Ensure the header stays above the table rows */
+  border-bottom: 2px solid #ddd; /* Keep border for the column headers */
+  border: none; /* Remove border for the column headers */
+}
+.table tbody td, 
+.table tbody th {
+  border: none; /* Remove borders from table body cells */
+}
+
+.table {
+  border-collapse: collapse;
+}
+.table tbody tr td {
+  border: none; /* Ensure no border between rows */
+}
+.table thead {box-sizing: border-box; 
+  border-bottom: 3px solid rgba(157, 157, 157, 0.3);/* Add a border to the bottom of the thead */
+}
+
+</style>
+</head>
+<body>
+  <app-root></app-root>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/en.js"></script> 
+
+</body>
+</html>

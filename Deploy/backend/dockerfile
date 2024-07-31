@@ -1,0 +1,26 @@
+FROM quay.io/minio/minio as minio
+
+ENV MINIO_ROOT_USER=ROOTUSER
+ENV MINIO_ROOT_PASSWORD=12345678
+
+EXPOSE 9000
+EXPOSE 9001
+
+FROM node:20-alpine
+
+WORKDIR /usr/src/app
+COPY backend/package.json ./
+COPY backend/tsconfig.build.json ./
+COPY backend/tsconfig.json ./
+
+
+COPY ./backend .
+RUN rm package-lock.json
+
+
+RUN npm install
+
+# RUN npm run build
+EXPOSE 3000
+
+CMD ["npm","run","start:dev"]

@@ -1,0 +1,20 @@
+FROM node:20 as build
+
+WORKDIR /usr/src/app
+COPY frontend/package*.json ./
+COPY frontend/tsconfig.json ./
+COPY frontend/tsconfig.spec.json ./
+COPY frontend/tsconfig.app.json ./
+COPY frontend/angular.json ./
+
+RUN npm install
+
+COPY ./frontend .
+RUN npm run build --prod
+
+# EXPOSE 4200
+# CMD [ "ng", "serve" ]
+FROM nginx:1.27.0
+COPY --from=build /usr/src/app/dist/frontend /usr/share/nginx/html
+COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
+CMD ["nginx", "-g", "daemon off;"]

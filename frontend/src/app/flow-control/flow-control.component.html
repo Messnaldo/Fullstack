@@ -1,0 +1,221 @@
+<nav class="navbar navbar-expand-sm navbar-light sticky-top" style="background-color: #FBFFFE;">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" style="color: #03045E;">SENTIMENT</a>
+      </li>
+    </ul>
+    <div class="dropdown">
+      <button class="btn btn-primary custom-dropdown-toggle" style="border: none;" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        PO
+      </button>
+      <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownMenuButton">
+        <li><a (click)="logout()" class="dropdown-item" style="text-align: center;" href="#"style="color: #03045E; font-size:22px;">Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid white-background" style="background-color: #f6f6f6;">
+  <div class="row">
+    <div class="col-sm-auto  sticky-top sticky-sidebar " style="position: fixed; margin-top: 85px; background-color: #FBFFFE; width: 90px;">
+      <div class="d-flex flex-sm-column flex-row flex-nowrapalign-items-center sticky-top">
+        <a  class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" 
+        data-bs-original-title="Icon-only">
+          <i class="bi-bootstrap fs-1"></i>
+        </a>
+        <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
+          <li>
+            <a routerLink="/analysis" class="nav-link py-3 px-2 btn btn-outline-primary text-center" 
+            style="background: #FBFFFE; 
+             border: none;font-family: 'Inter', sans-serif;" title="" data-bs-toggle="tooltip" 
+            data-bs-placement="right" data-bs-original-title="search">
+            <div style="text-align: center; color: #9D9D9D;width: 50px; height: 50px; font-weight: semi-bold; font-family: 'Inter', sans-serif;font-size: 14px;">
+              <span class="material-symbols-outlined"style="font-size: 30px;">
+                search
+              </span>
+              <br>
+                Analysis
+              </div>
+            </a>
+          </li>
+          
+          <li >
+            <a routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page" href="#"
+             class="nav-link py-3 px-2 btn btn-outline-primary text-center" style="background: #FBFFFE; border: none;" 
+              title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="search">
+              <div style="text-align: center; color: #9D9D9D;width: 50px; height: 50px; font-weight: semi-bold; font-family: 'Inter', sans-serif;font-size: 14px;">
+                <span class="material-symbols-outlined" style="width: 50px;font-size: 40px; font-weight: semi-bold;">
+                  manage_search
+                </span>
+                <br>
+                Test
+              </div>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/label" routerLinkActive="active" ariaCurrentWhenActive="page" href="#" 
+             class="nav-link py-3 px-2 btn btn-outline-primary text-center" style="background: #FBFFFE; 
+             border: none;font-family: 'Inter', sans-serif;"
+             title="" data-bs-toggle="tooltip"
+             data-bs-placement="right" data-bs-original-title="label">
+              <div style="text-align: center; color: #9D9D9D;font-weight: semi-bold; font-size: 14px;">
+                <span class="material-symbols-outlined" style="font-size: 40px;font-weight: semi-bold;"  >
+                  label
+                </span>
+                <br>
+                Label
+              </div>
+            </a>
+          </li>
+          <li >
+            <a routerLink="/flow" routerLinkActive="active" ariaCurrentWhenActive="page" href="#" class="nav-link py-3 px-2 btn btn-outline-primary text-center" 
+            title="" data-bs-toggle="tooltip" data-bs-placement="right" style="color: white; background: #0077B6; 
+            width: 50px; height: 50px; box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); 
+            display: flex; align-items: center; justify-content: center;font-family: 'Inter', sans-serif;" 
+            data-bs-original-title="label">
+              
+                <span class="material-symbols-outlined" style="font-size: 40px; ">
+                  tune
+                </span>
+              
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-sm p-3 custom-background center-content">
+      <div class="p-5 text-center custom-background">
+        <div class="header-container" style="display: flex; align-items: center; justify-content: space-between; gap: 810px; margin-bottom: 20px;">
+          <h1 class="dashboard-header" style="color: #9D9D9D; font-size: 35px; font-weight: bold; font-family: 'Inter', sans-serif; margin: 0; 
+          margin-top: -10px; margin-left: 60px;">CONTROLS</h1>
+          <div class="input-group" style="margin-top: -20px; width: 380px; margin-right: 15px;  height
+          :46px;">
+            <span class="material-symbols-outlined input-icon">search</span>
+            <input type="search" [(ngModel)]="searchTerm" style="background-color: transparent; border-color: #0077B6;" class="form-control rounded input-with-icon"
+             placeholder="Hashtag" aria-label="Search" aria-describedby="search-addon" />
+            <button type="button" class="btn btn-outline-primary" style="background-color: #0077B6; color: #FFF;" (click)="filterDags()">Search</button>
+          </div>
+        </div>
+
+        <div class="search" style="font-family: 'Inter', sans-serif;">
+          <div class="table-container" style="margin-top: 20px; margin-left: 50px;">
+            <table class="table"style="padding: 30px;">
+              <thead>
+                <tr>
+                  <th scope="col">DAG ID</th>
+                  <th scope="col">HASHTAG</th>
+                  <th scope="col">Action</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Config</th>
+                </tr>
+              </thead>
+              
+              <tbody>
+                <tr *ngFor="let dag of filteredDags">
+                  <td>{{ dag.dag_id }}</td>
+                  <td>{{ dag.hashtag }}</td>
+                  <td>
+                    <button class="btn btn-sm three-btn" style="color: #FFFFFF; background: #0077B6; border-radius: 25px;" (click)="runDag(dag.dag_id)">START</button>
+                    
+                    <button class="btn btn-sm three-btn" style="background: #FFFFFF; color: #0077B6; border-radius: 25px; border-color:#0077B6" (click)="deleteDag(dag.dag_id)">DELETE</button>
+                  </td>
+           
+                  <td class="status-cell">
+                    <span 
+                      class="material-symbols-outlined" 
+                      [style.color]="getStatusColor(dag.latest_dag_run?.state)">
+                      radio_button_checked
+                    </span>
+                    <span 
+                      style="color: #9D9D9D;">
+                      {{ getStatusText(dag.latest_dag_run?.state) }}
+                    </span>
+                  </td>
+                  <td>
+                    <span class="material-symbols-outlined"  (click)="showConfig(dag)" style="color: #9D9D9D;" data-bs-toggle="modal" data-bs-target="#configModal">
+                      more_horiz
+                    </span>
+          
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="">Create</h5>
+              </div>
+              <div class="modal-body">
+                <div class="inline-container">
+                  <p>Start Date</p>
+                  <input type="date" [(ngModel)]="newDag.startDate" class="date" name="start" value="today" min="1900-01-01" max="2100-12-31" style="width: 300px; height: 50px; font-size: 20px; border: 2px solid #0077B6; border-radius: 15px;" />
+                </div>
+                <div class="inline-container">
+                  <p>Schedule</p>
+                  <select [(ngModel)]="newDag.schedule" class="form-select" style="width: 300px; height: 50px; font-size: 20px; border: 2px solid #0077B6; border-radius: 15px;">
+                    <option value="none">None Schedule</option>
+                    <option value="hourly">Every Hour</option>
+                    <option value="daily">Every Day</option>
+                  </select>
+                </div>
+                <div class="inline-container">
+                  <p>Hashtag</p>
+                  <input type="text" [(ngModel)]="newDag.hashtag" class="form-control" placeholder="" style="width: 300px; height: 50px; border: 2px solid #0077B6; border-radius: 15px;">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary custom-cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary custom-save-btn" (click)="addDag()" data-bs-dismiss="modal">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="configModal" tabindex="-1" aria-labelledby="configModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="configModalLabel" style="">Config</h5>
+              
+              </div>
+              <div class="modal-body">
+                <div class="inline-container">
+                  <p>Start Date</p>
+                  <input type="date" [(ngModel)]="selectedConfig.startDate" name="start" min="1900-01-01" max="2100-12-31" style="width: 300px; height: 50px; font-size: 20px; border: 2px solid #0077B6; border-radius: 15px;" />
+                </div>
+                <div class="inline-container">
+                  <p>Schedule</p>
+                  <select [(ngModel)]="selectedConfig.schedule" class="form-select" style="width: 300px; height: 50px; font-size: 20px; border: 2px solid #0077B6; border-radius: 15px;">
+                    <option value="none">None Schedule</option>
+                    <option value="hourly">Every Hour</option>
+                    <option value="daily">Every Day</option>
+                  </select>
+                </div>
+                <div class="inline-container">
+                  <p>Hashtag</p>
+                  <input type="text" [(ngModel)]="selectedConfig.hashtag" class="form-control" style="width: 300px; height: 50px; border: 2px solid #0077B6; border-radius: 15px;" readonly />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary custom-cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary custom-save-btn" (click)="saveConfig()" data-bs-dismiss="modal">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        
+
+        <button class="btn btn-primary btn-circle btn-lg float-bottom-right" style="margin-right:30px; margin-bottom: 60px;" data-bs-toggle="modal" data-bs-target="#exampleModal" id="addButton">
+          <span class="material-symbols-outlined" style="font-size: 40px;">add</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

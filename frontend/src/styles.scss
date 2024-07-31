@@ -1,0 +1,397 @@
+body {
+  background-color: #F6F6F6; /* สีเทาสำหรับพื้นหลัง */
+}
+
+
+
+.dropdown {
+  .btn{
+
+
+  border-radius: 10px; /* ทำให้ปุ่มกลม */
+  width: 50px; /* ความกว้างของปุ่ม */
+  height: 50px; /* ความสูงของปุ่ม */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 26px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #03045E, #00B4D8); 
+  margin-right: 20px;
+  margin-top: 16px;
+  /* เอา border ออก */
+}
+}
+
+  .nav-item .nav-link { 
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 13px;
+    background: linear-gradient(180deg, #03045E, #00B4D8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .p-5 {
+    background: #FFFFFF;
+  
+  
+  .inactive-button {
+    width: 193px; /* ความกว้างของปุ่ม */
+    height: 52px;
+    background: #0077B6;
+    border-radius: 5px;
+    border: none; /* ลบ border ออก */
+    margin-bottom: 20px;
+    /* CSS สำหรับรูปภาพในปุ่ม */
+    .button-image {
+      margin-left: -25px;
+      width: 43px; /* ความกว้างของรูปภาพ */
+      height: 43px;
+      border-radius: 5px;
+      border: none; /* ลบ border ออก */
+    }
+  
+    /* CSS สำหรับข้อความในปุ่ม */
+    .button-text {
+      font-weight: bold;
+      color: #FFFFFF;
+      font-size: 20px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+  }
+  
+  }
+  .custom-button {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* เพิ่มเงา */
+    transition: box-shadow 0.3s ease-in-out; /* เพิ่มการเปลี่ยนแปลงอย่างนุ่มนวลเมื่อ hover */
+  }
+  
+  /* เงาเมื่อ hover สำหรับปุ่มแรกเท่านั้น */
+  .custom-button:not(:hover) {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* ไม่เปลี่ยนแปลงเมื่อ hover */
+  }
+  .search p {
+    font-weight: bold;
+    color: #9D9D9D; /* สีข้อความใน search */
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 5px;
+    
+  }
+  .search p .highlight {
+    background: linear-gradient(135deg, #03045E, #00B4D8); /* สีพื้นหลังแบบ gradient */
+    -webkit-background-clip: text; /* สีที่คุณต้องการเปลี่ยนสีส่วนที่เน้น */
+}
+
+  .search input{
+
+    border:none;
+    outline: none; 
+    font-size: 200px;
+    font-weight: bold;
+    text-align: center;
+    color: transparent; 
+  background: linear-gradient(135deg, #03045E, #00B4D8); /* สีพื้นหลังแบบ gradient */
+  -webkit-background-clip: text; /* เพื่อให้ gradient ปรากฏเฉพาะในข้อความ */
+  background-clip: text;
+  margin-bottom: 5px;
+  
+  
+  }
+  
+  .search input::placeholder {
+    color: transparent; /* ทำให้ข้อความใน input เป็นโปร่งใส */
+  background: linear-gradient(-72deg, #03045E, #00B4D8); /* สีพื้นหลังแบบ gradient */
+  -webkit-background-clip: text; /* เพื่อให้ gradient ปรากฏเฉพาะในข้อความ */
+  background-clip: text;
+  }
+  .Emoji {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* จัดการช่องว่างระหว่างปุ่มให้เท่า ๆ กัน */
+    align-items: center; /* จัดปุ่มให้อยู่ตรงกลางแนวตั้ง */
+    gap: 30px; /* ลดขนาดช่องว่างระหว่างปุ่ม */
+}
+
+  .Emoji .inactive-button {
+    
+    width: 150px; /* ความกว้างของปุ่ม */
+    height: 52px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: none; /* ลบ border ออก */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ปุ่ม */
+    transition: box-shadow 0.3s ease; 
+}
+
+.Emoji .inactive-button .button-text{
+  color: #000000; /* เปลี่ยนสีของข้อความในปุ่ม */
+  font-size: 25px; /* ขนาดของข้อความ */
+  
+  font-family: 'Inter';
+
+}
+.Emoji .inactive-button .button-image {
+    margin-left: -0px;
+    width: 43px; /* ความกว้างของรูปภาพ */
+    height: 43px;
+    border-radius: 5px;
+    border: none; /* ลบ border ออก */
+}
+.custom-background {
+  background-color: #f6f6f6; /* เปลี่ยนสีพื้นหลังเป็นสีเทาอ่อน */
+}
+.white-background{
+  background-color: #FFFFFF; /* เปลี่ยนสีพื้นหลังเป็นสีเทาอ่อน */
+}
+.col-sm-auto {
+
+  width: 85px;
+}
+.navbar{
+  height: 85px;
+}
+.nav-item .nav-link .material-symbols-outlined{
+  width: 40px;
+  height: 40px;
+}
+h5 {
+  color: #9D9D9D; /* ตั้งค่าสีของตัวอักษร */
+  font-size: 30px; /* ตั้งค่าขนาดตัวอักษร */
+  font-weight: bold; /* ตั้งค่าความหนาของตัวอักษรเป็น bold */
+  /* font-style: bold; */ /* ไม่มีการใช้ font-style ในรูปแบบที่ถูกต้อง */
+}
+h3 {
+  color: #0077B6; /* ตั้งค่าสีของตัวอักษร */
+  font-size: 75px; /* ตั้งค่าขนาดตัวอักษร */
+  font-weight: bold; /* ตั้งค่าความหนาของตัวอักษรเป็น bold */
+  /* font-style: bold; */ /* ไม่มีการใช้ font-style ในรูปแบบที่ถูกต้อง */
+}
+.card-body {
+  overflow-y: auto;
+  word-wrap: break-word; /* Forcing the text to wrap */
+  white-space: normal; /* Ensure the text wraps normally */
+  overflow-wrap: break-word; /* Ensure the text wraps normally */
+}
+
+.card-body p.mb-0 {
+  word-wrap: break-word; /* Forcing the text to wrap */
+  white-space: normal; /* Ensure the text wraps normally */
+  overflow-wrap: break-word; /* Ensure the text wraps normally */
+  display: block;
+  width: 100%;
+}
+
+/* Custom scrollbar styles */
+.card-body::-webkit-scrollbar {
+  width: 2px;
+  height: 12px;
+
+}
+
+.card-body::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+  border: 2px solid #f1f1f1;
+  border-radius: 10px;
+}
+
+.card-body::-webkit-scrollbar-thumb:hover {
+  background: #0077B6;
+}
+
+
+.collapsible-card {
+  max-height: 400px; /* Initial height */
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.collapsible-card.expanded {
+  max-height: 1000px; /* Expanded height */
+}
+/* Custom scrollbar styles */
+/* Custom scrollbar styles */
+/* Custom scrollbar styles */
+.card-body p.mb-0 {
+  word-wrap: break-word; /* Forcing the text to wrap */
+  white-space: normal; /* Ensure the text wraps normally */
+  overflow-wrap: break-word; /* Ensure the text wraps normally */
+  display: block;
+  width: 100%;
+}
+.sentiment-container {
+  max-height: 250px; /* Initial height */
+  overflow-x: hidden; /* Hide horizontal scroll */
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* Webkit browsers */
+.sentiment-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.sentiment-container::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+
+.sentiment-container::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+  
+  border: 2px solid #f1f1f1;
+  border-radius: 10px;
+}
+
+.sentiment-container::-webkit-scrollbar-thumb:hover {
+  //background: rgba(100, 100, 100, 0.8);
+  background: #0077B6;
+}
+
+
+
+.sentiment-container.expanded {
+  max-height: 500px; /* Expanded height to 2 times */
+}
+
+
+.sticky-sidebar {
+  height: 100vh; /* ให้ความสูงเต็มหน้าจอ */
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  margin-top: 85px; /* ปรับ margin ให้เหมาะสม */
+}
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+ 
+  text-align: center;
+  flex-direction: column;
+}
+
+
+
+
+/* CSS for centering the container */
+.col-sm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.search p, .search textarea, .search .highlight {
+  width: 450px;
+  font-size:20px;
+}
+.search .button {
+  background: #0077B6; color:white;
+  border: none;
+  border-radius: 10px;
+  width: 450px;
+}
+.search .button span {
+  font-family: 'Inter', sans-serif;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+textarea {
+  width: 450px;
+  height: 135px;
+  font-size: 20px;
+  font-weight: bold;
+  
+  margin-bottom: 5px;
+}
+textarea::placeholder {
+  color: #0077B6; /* สีที่ต้องการ */
+  font-size: 20px;
+  
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+textarea::-webkit-scrollbar {
+  width: 12px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+  
+  border: 2px solid #f1f1f1;
+  border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  //background: rgba(100, 100, 100, 0.8);
+  background: #0077B6;
+}
+.search-section {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.results-section {
+  position: relative;
+  margin-top: 300px; /* Adjust to make sure it's below the fixed section */
+}
+
+
+.custom-bg-section {
+  background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

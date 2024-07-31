@@ -1,0 +1,135 @@
+# services:
+#   frontend:
+#     image: social-sentiment/fullstack:1
+#     container_name: social-sentiment-frontend
+#     ports:
+#       - "80:80"
+#     environment:
+#       - API_TARGET=http://api:3000
+
+#   api:
+#     image: social-sentiment/fullstack:1
+#     container_name: social-sentiment-backend
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       - PORT=3000
+#       - NODE_ENV=development
+#     volumes:
+#       - ${HOST_VOLUME}/backend:/usr/src/app
+#     command: npm run start:dev
+services:
+  # frontend:
+  #   build: .
+  #   # image: social-sentiment/fullstack:1
+  #   container_name: social-sentiment-fulstack
+  #   ports:
+  #     - "80:80"
+  #   environment:
+  #     - API_TARGET=http://api:3000
+
+  api:
+    # build: .
+    image: social-sentiment/fullstack:latest
+    container_name: social-sentiment-fullstack
+    ports:
+      - "3000:3000"
+      # - "9080:80"
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+    
+    # command: npm run start:dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# services:
+#   frontend:
+#     # build:
+#     #   dockerfile: Dockerfile
+#     #   context: ./frontend
+#     image: social-sentiment/fullstack:1
+#     container_name: social-sentiment-frontend
+  
+#     # command: npm run start
+#     # volumes:
+#     #   - ./frontend:/usr/frontend/src/app
+#     #   - /usr/frontend/src/app/node_modules
+#     ports:
+#       # - "4200:4200"
+#       - "80:80"
+#     # depends_on:
+#     #   - api
+#     environment:
+#       - API_TARGET=http://api:3000
+#     # networks:
+#     #   - social-sentiment-network
+#   api:
+#     # build: 
+#     #   context: ./backend
+#     #   dockerfile: Dockerfile
+#     image: social-sentiment/fullstack:1
+#     container_name: social-sentiment-backend
+
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       - PORT=3000
+#       - NODE_ENV=development
+#       # - DATABASE_URL=postgres://user:password@postgres:5432/db
+#       # - MINIO_ENDPOINT=minio1
+#       # - MINIO_PORT=9000
+#       # - MINIO_USE_SSL=false
+#       # - MINIO_ACCESS_KEY=admin
+#       # - MINIO_SECRET_KEY=12345678
+#     volumes:
+#       - ${HOST_VOLUME}/backend:/usr/src/app
+#       # - /usr/src/app/node_modules
+#     command: npm run start:dev
+# #     networks:
+# #       - social-sentiment-network
+# # networks:
+# #   social-sentiment-network:
+# #     driver: bridge

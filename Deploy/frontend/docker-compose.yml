@@ -1,0 +1,25 @@
+services:
+  frontend:
+    # build:
+    #   dockerfile: Dockerfile
+    #   context: ./frontend
+    image: social-sentiment/frontend:.
+    container_name: social-sentiment-frontend
+  
+    # command: npm run start
+    # volumes:
+    #   - ./frontend:/usr/frontend/src/app
+    #   - /usr/frontend/src/app/node_modules
+    ports:
+      # - "4200:4200"
+      - "80:80"
+    # depends_on:
+    #   - api
+    environment:
+      - API_TARGET=http://${SERVER_IP}:3000
+    # networks:
+    #   - external-network
+# networks:
+#   external-network:
+#     external: true
+   

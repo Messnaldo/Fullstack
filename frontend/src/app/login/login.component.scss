@@ -1,0 +1,28 @@
+:host {
+    background: linear-gradient(135deg, #03045E, #00B4D8);
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  input::placeholder {
+    color: #0077B6; /* Set the placeholder text color */
+    opacity: 1; /* Firefox requires this to make the color fully opaque */
+  }
+  .center-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    width: 360px;
+    height: 50px;
+  }
+  .form-control {
+    color: #0077B6;
+    border-color: #0077B6;
+    width: 360px;
+    height: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 20px; /* Add padding to the left */
+  }
